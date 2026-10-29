@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEMPO - Bar y Restaurante | Carta Digital</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        tempo: {
+                            bg: '#0c0d10',
+                            card: '#16181d',
+                            accent: '#d4af37',
+                            accentHover: '#f3e5ab',
+                            goldMuted: '#9a8130',
+                            darkBorder: '#292c35'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0c0d10;
+            color: #e2e8f0;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #aa820a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 6px;
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0c0d10;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #d4af37;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between custom-scrollbar">
+
+    <!-- Top Info Bar -->
+    <div class="bg-tempo-card border-b border-tempo-darkBorder text-xs text-gray-400 py-2 px-4 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto flex flex-wrap justify-between items-center gap-2">
+            <div class="flex items-center space-x-4">
+                <span class="flex items-center space-x-1 hover:text-tempo-accent transition-colors">
+                    <i class="fa-solid fa-location-dot text-tempo-accent"></i>
+                    <span>Rúa Fomento 18, bajo. Carballo, A Coruña</span>
+                </span>
+            </div>
+            <div class="flex items-center space-x-3">
+                <a href="https://instagram.com/tempo_carballo" target="_blank" class="hover:text-tempo-accent transition-colors flex items-center space-x-1">
+                    <i class="fa-brands fa-instagram text-pink-500 text-sm"></i>
+                    <span>@tempo_carballo</span>
+                </a>
+                <span>|</span>
+                <a href="tel:618796309" class="hover:text-tempo-accent transition-colors flex items-center space-x-1 font-semibold">
+                    <i class="fa-solid fa-phone text-tempo-accent"></i>
+                    <span>618 79 63 09</span>
+                </a>
+                <span>|</span>
+                <a href="https://wa.me/34618796309" target="_blank" class="hover:text-tempo-accent transition-colors flex items-center space-x-1">
+                    <i class="fa-brands fa-whatsapp text-green-500 text-sm"></i>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header / Hero Banner -->
+    <header class="relative border-b border-tempo-darkBorder py-12 px-4 text-center overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#d4af37_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        
+        <div class="relative z-10 max-w-4xl mx-auto">
+            <div class="inline-block mb-3 px-4 py-1 border border-tempo-goldMuted/40 rounded-full text-xs font-semibold tracking-widest text-tempo-accent uppercase">
+                EST. 2026 • CARBALLO
+            </div>
+            <h1 class="font-serif text-4xl md:text-6xl font-bold tracking-tight mb-2 gold-gradient-text">
+                TEMPO
+            </h1>
+            <p class="font-serif text-lg md:text-xl text-gray-300 italic tracking-wide mb-3">
+                Bar & Restaurante
+            </p>
+            <p class="text-sm text-gray-400 max-w-md mx-auto flex items-center justify-center gap-2 mb-1">
+                <i class="fa-solid fa-map-pin text-tempo-accent"></i>
+                Rúa Fomento 18, bajo. Carballo
+            </p>
+            
+            <!-- Quick Actions -->
+            <div class="mt-6 flex flex-wrap justify-center gap-3">
+                <a href="https://maps.google.com/?q=Rua+Fomento+18+Carballo" target="_blank" 
+                   class="px-4 py-2 bg-tempo-card hover:bg-tempo-darkBorder border border-tempo-goldMuted/40 rounded-lg text-xs font-medium text-gray-200 hover:text-tempo-accent transition-all duration-200 flex items-center space-x-2">
+                    <i class="fa-solid fa-route text-tempo-accent"></i>
+                    <span>Cómo Llegar</span>
+                </a>
+                <a href="https://instagram.com/tempo_carballo" target="_blank" 
+                   class="px-4 py-2 bg-tempo-card hover:bg-tempo-darkBorder border border-tempo-goldMuted/40 rounded-lg text-xs font-medium text-pink-400 hover:text-pink-300 transition-all duration-200 flex items-center space-x-2">
+                    <i class="fa-brands fa-instagram text-sm"></i>
+                    <span>@tempo_carballo</span>
+                </a>
+                <a href="tel:618796309" 
+                   class="px-4 py-2 bg-tempo-accent hover:bg-tempo-accentHover text-tempo-bg rounded-lg text-xs font-bold transition-all duration-200 flex items-center space-x-2">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Llamar: 618 79 63 09</span>
+                </a>
+                <a href="https://wa.me/34618796309" target="_blank"
+                   class="px-4 py-2 bg-green-700 hover:bg-green-600 text-white rounded-lg text-xs font-bold transition-all duration-200 flex items-center space-x-2">
+                    <i class="fa-brands fa-whatsapp text-sm"></i>
+                    <span>Enviar WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-6xl mx-auto px-4 py-8 flex-grow w-full">
+        
+        <!-- Search & Filter Controls -->
+        <div class="space-y-6 mb-10">
+            <!-- Real-time Search Bar -->
+            <div class="relative max-w-xl mx-auto">
+                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-tempo-accent">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <input type="text" id="searchInput" 
+                       placeholder="Buscar por plato o ingrediente (ej. atún, bacon, queso...)" 
+                       class="w-full pl-11 pr-10 py-3 bg-tempo-card border border-tempo-darkBorder focus:border-tempo-accent text-gray-100 rounded-xl outline-none transition-all placeholder-gray-500 shadow-lg text-sm">
+                <button id="clearSearch" class="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-500 hover:text-tempo-accent hidden">
+                    <i class="fa-solid fa-circle-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Categories Horizontal Slider -->
+            <div class="flex overflow-x-auto pb-2 custom-scrollbar gap-2 md:justify-center" id="categoriesContainer">
+                <!-- Dynamically Populated by JS -->
+            </div>
+        </div>
+
+        <!-- Menu Grid Container -->
+        <div id="menuContainer" class="space-y-12">
+            <!-- Dynamic Sections rendered here -->
+        </div>
+
+        <!-- Empty Search Result Notice -->
+        <div id="noResults" class="hidden text-center py-16 text-gray-400">
+            <i class="fa-solid fa-utensils text-4xl mb-3 text-tempo-goldMuted opacity-50"></i>
+            <p class="text-lg font-serif text-gray-300">No hemos encontrado ningún plato o ingrediente.</p>
+            <p class="text-sm text-gray-500 mt-1">Prueba a buscar con otra palabra o limpia el buscador.</p>
+            <button onclick="resetSearch()" class="mt-4 px-4 py-2 bg-tempo-card border border-tempo-darkBorder text-tempo-accent rounded-lg text-xs font-semibold hover:border-tempo-accent transition">
+                Ver toda la carta
+            </button>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-tempo-card border-t border-tempo-darkBorder mt-16 text-gray-400 text-sm">
+        <div class="max-w-6xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Brand Column -->
+            <div>
+                <h3 class="font-serif text-2xl font-bold gold-gradient-text mb-2">TEMPO</h3>
+                <p class="text-xs text-gray-400 mb-4">Bar & Restaurante • Est. 2026</p>
+                <p class="text-xs text-gray-400 leading-relaxed">
+                    Sabores auténticos en un ambiente acogedor y moderno. Disfruta de la mejor combinación de street food, burgers y cocina tradicional en Carballo.
+                </p>
+            </div>
+
+            <!-- Ubicación & Horario -->
+            <div>
+                <h4 class="font-semibold text-gray-200 mb-3 border-b border-tempo-darkBorder pb-1 text-xs uppercase tracking-wider text-tempo-accent">Ubicación y Contacto</h4>
+                <ul class="space-y-2 text-xs">
+                    <li class="flex items-start space-x-2">
+                        <i class="fa-solid fa-location-dot text-tempo-accent mt-0.5"></i>
+                        <span>Rúa Fomento 18, bajo. Carballo.</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <i class="fa-solid fa-phone text-tempo-accent"></i>
+                        <a href="tel:618796309" class="hover:text-tempo-accent transition-colors font-semibold">618 79 63 09</a>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <i class="fa-brands fa-whatsapp text-green-500"></i>
+                        <a href="https://wa.me/34618796309" target="_blank" class="hover:text-tempo-accent transition-colors">+34 618 796 309</a>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <i class="fa-brands fa-instagram text-pink-500"></i>
+                        <a href="https://instagram.com/tempo_carballo" target="_blank" class="hover:text-tempo-accent transition-colors">@tempo_carballo</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Google Maps Embed Link Action -->
+            <div>
+                <h4 class="font-semibold text-gray-200 mb-3 border-b border-tempo-darkBorder pb-1 text-xs uppercase tracking-wider text-tempo-accent">Visítanos u Ordena</h4>
+                <p class="text-xs text-gray-400 mb-3">Estamos ubicados en pleno centro de Carballo. Te esperamos.</p>
+                <div class="flex flex-col gap-2">
+                    <a href="https://maps.google.com/?q=Rua+Fomento+18+Carballo" target="_blank" 
+                       class="inline-flex items-center justify-center space-x-2 px-4 py-2 bg-tempo-bg border border-tempo-goldMuted/40 hover:border-tempo-accent text-gray-200 hover:text-tempo-accent rounded-lg text-xs font-semibold transition">
+                        <i class="fa-solid fa-map-location-dot text-tempo-accent"></i>
+                        <span>Abrir en Google Maps</span>
+                    </a>
+                    <a href="https://instagram.com/tempo_carballo" target="_blank" 
+                       class="inline-flex items-center justify-center space-x-2 px-4 py-2 bg-tempo-bg border border-tempo-goldMuted/40 hover:border-pink-500 text-gray-200 hover:text-pink-400 rounded-lg text-xs font-semibold transition">
+                        <i class="fa-brands fa-instagram text-pink-500"></i>
+                        <span>Síguenos en Instagram</span>
+                    </a>
+                    <a href="https://wa.me/34618796309" target="_blank" 
+                       class="inline-flex items-center justify-center space-x-2 px-4 py-2 bg-green-800/80 hover:bg-green-700 text-white rounded-lg text-xs font-semibold transition">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span>Pedir por WhatsApp (618 79 63 09)</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="border-t border-tempo-darkBorder py-4 text-center text-xs text-gray-500">
+            &copy; 2026 TEMPO Bar y Restaurante — Rúa Fomento 18, bajo. Carballo. Tel: 618 79 63 09. IG: @tempo_carballo
+        </div>
+    </footer>
+
+    <!-- JavaScript Data and Logic -->
+    <script>
+        const menuData = [
+            {
+                category: "Entrantes",
+                items: [
+                    { name: "Tequeños (6 unidades)", desc: "Deliciosos deditos de queso empanados y crujientes.", price: 6.00 },
+                    { name: "Donuts de queso (6 unidades)", desc: "Aros de queso crujientes por fuera y fundidos por dentro.", price: 5.00 },
+                    { name: "Mini arepitas con nata y queso (5 unidades)", desc: "Pequeñas arepas tradicionales acompañadas de nata criolla y queso.", price: 6.00 },
+                    { name: "Nuggets de pollo con patatas", desc: "Porción de nuggets dorados acompañados de patatas fritas.", price: 6.50 },
+                    { name: "Tiras de pollo con patatas", desc: "Tiras de pechuga crujiente acompañadas de patatas fritas.", price: 7.00 },
+                    { name: "Ración de patatas", desc: "Crujientes patatas fritas estilo tradicional.", price: 3.80 }
+                ]
+            },
+            {
+                category: "Bocadillos",
+                items: [
+                    { name: "Bocadillo Tempo", desc: "Lomo, bacon, queso gouda, pan, tomate y salsa de la casa.", price: 7.00 },
+                    { name: "Bocadillo Chicken", desc: "Pollo, bacon, cheddar, pan, lechuga y salsa a elegir.", price: 8.00 },
+                    { name: "Bocadillo Completo", desc: "2 huevos, bacon, lomo, pan, lechuga y tomate.", price: 7.50 },
+                    { name: "Bocadillo de jamón serrano", desc: "Jamón serrano, pan, tomate triturado y aceite de oliva.", price: 6.00 }
+                ]
+            },
+            {
+                category: "Platos Combinados",
+                items: [
+                    { name: "Plato 1", desc: "Filete de ternera, lomo, 2 huevos, patatas fritas y ensalada.", price: 11.50 },
+                    { name: "Plato 2", desc: "Filete de ternera o pechuga de pollo, queso llanero a la plancha y patatas fritas.", price: 10.00 },
+                    { name: "Plato 3", desc: "Filete de pechuga de pollo, bacon, 2 huevos y ensalada.", price: 9.50 }
+                ]
+            },
+            {
+                category: "Hamburguesas",
+                items: [
+                    { name: "Tempo", desc: "Pollo, ternera, chuleta ahumada, huevo, queso, bacon, pan de semillas, lechuga, tomate, cebolla y salsa de la casa + patatas.", price: 13.50 },
+                    { name: "La Ahumada real", desc: "Ternera, bacon, queso ahumado, pan brioche y salsa de la casa + patatas.", price: 12.00 },
+                    { name: "Salto Ángel", desc: "Pollo, bacon, cheddar, pan de semillas, lechuga, tomate y salsa de la casa.", price: 11.50 },
+                    { name: "La Monumental", desc: "Doble carne, bacon, huevo, queso fundido, pan de semillas y salsa de la casa.", price: 11.00 },
+                    { name: "Tempo Retro", desc: "Ternera, queso cheddar, pan de semillas, lechuga, pepinillos, salsa barbacoa y mayonesa + patatas.", price: 11.00 },
+                    { name: "Crispy", desc: "Pollo crispy, cheddar, pan brioche, lechuga, cebolla, salsa BBQ y salsa mayonesa + patatas.", price: 10.50 },
+                    { name: "La Sajonia", desc: "Chuleta sajona, bacon, huevo, pan de semillas, lechuga, mayonesa y miel-mostaza + patatas.", price: 10.50 },
+                    { name: "Bacon BBQ", desc: "Ternera o pollo, bacon, cheddar, pan brioche, salsa BBQ y lechuga + patatas.", price: 10.00 },
+                    { name: "Básica", desc: "Ternera, queso, pan de semillas, lechuga y tomate.", price: 6.00 }
+                ]
+            },
+            {
+                category: "Street Food",
+                items: [
+                    { name: "Shawarma de pollo", desc: "Pollo, bacon, queso edam, tortilla wrap, lechuga, tomate y cebolla; acompañado de patatas.", price: 10.50 },
+                    { name: "Perrito caliente", desc: "Salchicha, bacon, queso cheddar, pan y patata paja.", price: 5.00 }
+                ]
+            },
+            {
+                category: "Empanadas",
+                items: [
+                    { name: "Empanada de carne mechada, tajadas y queso", desc: "Rellena de carne mechada, plátano maduro frito y queso.", price: 4.30 },
+                    { name: "Empanada de carne mechada con queso", desc: "Rellena de jugosa carne mechada y queso derretido.", price: 3.70 },
+                    { name: "Empanada de pollo con queso", desc: "Pollo desmenuzado sazonado con queso fundido.", price: 3.50 },
+                    { name: "Empanada de carne mechada", desc: "Empanada crujiente rellena de carne mechada.", price: 3.50 },
+                    { name: "Empanada de pollo", desc: "Empanada sabrosa de pollo sazonado.", price: 3.20 },
+                    { name: "Empanada de queso", desc: "Empanada rellena de queso blanco derretido.", price: 3.20 }
+                ]
+            },
+            {
+                category: "Arepas",
+                items: [
+                    { name: "Arepa Pelúa", desc: "Relleno de carne mechada y queso cheddar.", price: 7.50 },
+                    { name: "Arepa Sifrina", desc: "Relleno de pollo desmechado y queso a la plancha.", price: 7.20 },
+                    { name: "Arepa Casera", desc: "Relleno de mantequilla, jamón y queso.", price: 6.00 },
+                    { name: "Arepa de Atún", desc: "Relleno de atún, queso y mayonesa.", price: 5.00 }
+                ]
+            },
+            {
+                category: "Bebidas",
+                items: [
+                    { name: "Coca-Cola", desc: "Refresco 33cl", price: 2.50 },
+                    { name: "Fanta", desc: "Refresco 33cl", price: 2.50 },
+                    { name: "Sprite", desc: "Refresco 33cl", price: 2.50 },
+                    { name: "Fuze Tea", desc: "Té frío 33cl", price: 2.50 },
+                    { name: "Aquarius", desc: "Bebida isotónica 33cl", price: 2.50 },
+                    { name: "Frescolita", desc: "Sabor tradicional 33cl", price: 2.50 },
+                    { name: "Malta Polar", desc: "Bebida de malta 33cl", price: 2.50 },
+                    { name: "Tónica Schweppes", desc: "Refresco 25cl", price: 2.50 },
+                    { name: "Zumo Aura", desc: "Variedad de sabores", price: 2.50 },
+                    { name: "Cerveza Estrella", desc: "Cerveza rubia 33cl", price: 2.50 },
+                    { name: "Red Bull", desc: "Bebida energética", price: 2.50 },
+                    { name: "Monster", desc: "Bebida energética", price: 2.50 },
+                    { name: "Agua con gas", desc: "Agua mineral con gas", price: 1.60 },
+                    { name: "Agua", desc: "Agua mineral natural", price: 1.50 },
+                    { name: "Café", desc: "Café recién hecho", price: 1.50 },
+                    { name: "Cola Cao", desc: "Bebida de cacao", price: 1.80 }
+                ]
+            }
+        ];
+
+        let selectedCategory = "Todos";
+        let searchQuery = "";
+
+        const menuContainer = document.getElementById("menuContainer");
+        const categoriesContainer = document.getElementById("categoriesContainer");
+        const searchInput = document.getElementById("searchInput");
+        const clearSearchBtn = document.getElementById("clearSearch");
+        const noResults = document.getElementById("noResults");
+
+        function initApp() {
+            renderCategories();
+            renderMenu();
+
+            searchInput.addEventListener("input", (e) => {
+                searchQuery = e.target.value.toLowerCase().trim();
+                clearSearchBtn.classList.toggle("hidden", searchQuery === "");
+                renderMenu();
+            });
+
+            clearSearchBtn.addEventListener("click", () => {
+                resetSearch();
+            });
+        }
+
+        function resetSearch() {
+            searchQuery = "";
+            searchInput.value = "";
+            clearSearchBtn.classList.add("hidden");
+            selectedCategory = "Todos";
+            renderCategories();
+            renderMenu();
+        }
+
+        function renderCategories() {
+            const categories = ["Todos", ...menuData.map(c => c.category)];
+            categoriesContainer.innerHTML = categories.map(cat => {
+                const isActive = cat === selectedCategory;
+                return `
+                    <button onclick="selectCategory('${cat}')" 
+                            class="px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all duration-200 border ${
+                                isActive 
+                                ? 'bg-tempo-accent text-tempo-bg border-tempo-accent shadow-lg shadow-tempo-accent/20' 
+                                : 'bg-tempo-card text-gray-300 border-tempo-darkBorder hover:border-tempo-goldMuted hover:text-tempo-accent'
+                            }">
+                        ${cat}
+                    </button>
+                `;
+            }).join("");
+        }
+
+        function selectCategory(cat) {
+            selectedCategory = cat;
+            renderCategories();
+            renderMenu();
+        }
+
+        function renderMenu() {
+            menuContainer.innerHTML = "";
+            let totalItemsDisplayed = 0;
+
+            menuData.forEach(catGroup => {
+                if (selectedCategory !== "Todos" && catGroup.category !== selectedCategory) {
+                    return;
+                }
+
+                const filteredItems = catGroup.items.filter(item => {
+                    const matchesName = item.name.toLowerCase().includes(searchQuery);
+                    const matchesDesc = item.desc ? item.desc.toLowerCase().includes(searchQuery) : false;
+                    return matchesName || matchesDesc;
+                });
+
+                if (filteredItems.length > 0) {
+                    totalItemsDisplayed += filteredItems.length;
+
+                    const sectionEl = document.createElement("section");
+                    sectionEl.className = "space-y-4";
+
+                    sectionEl.innerHTML = `
+                        <div class="flex items-center gap-3 border-b border-tempo-darkBorder pb-2">
+                            <h2 class="font-serif text-2xl font-bold text-tempo-accent tracking-wide uppercase">${catGroup.category}</h2>
+                            <div class="h-px bg-gradient-to-r from-tempo-goldMuted/40 to-transparent flex-grow"></div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            ${filteredItems.map(item => `
+                                <div class="bg-tempo-card border border-tempo-darkBorder/80 hover:border-tempo-goldMuted/60 p-4 rounded-xl transition-all duration-200 flex flex-col justify-between group shadow-sm hover:shadow-md">
+                                    <div>
+                                        <div class="flex justify-between items-start gap-2 mb-1">
+                                            <h3 class="font-semibold text-gray-100 group-hover:text-tempo-accentHover transition-colors text-sm">${item.name}</h3>
+                                            <span class="font-bold text-tempo-accent text-sm whitespace-nowrap bg-tempo-bg/80 px-2.5 py-1 rounded-md border border-tempo-goldMuted/30">
+                                                ${item.price.toFixed(2).replace('.', ',')} €
+                                            </span>
+                                        </div>
+                                        ${item.desc ? `<p class="text-xs text-gray-400 font-light leading-relaxed">${item.desc}</p>` : ''}
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    `;
+
+                    menuContainer.appendChild(sectionEl);
+                }
+            });
+
+            noResults.classList.toggle("hidden", totalItemsDisplayed > 0);
+        }
+
+        window.onload = initApp;
+    </script>
+</body>
+</html>
+```
+
+Ya puedes hacer clic en el botón de vista previa para interactuar con la carta completa y ver la nueva **Arepa de Atún** perfectamente integrada.
